@@ -147,6 +147,17 @@ FROM project..indian_food
 WHERE course='snack' AND cook_time <>'-1'
 --ORDER BY cook_time ASC 
 
+CREATE VIEW top_10_snack_with_long_cooking_time AS
+SELECT TOP 10 name,course, cook_time
+FROM project..indian_food
+WHERE course='snack' AND cook_time <>'-1'
+--ORDER BY cook_time DESC
+
+CREATE VIEW top_10_maincourse_with_short_cooking_time AS
+SELECT TOP 10 name,course, cook_time
+FROM project..indian_food
+WHERE course='main course' AND cook_time <>'-1'
+--ORDER BY cook_time ASC
 
 CREATE VIEW top_10_maincourse_with_longest_time AS
 SELECT TOP 10 name,course, cook_time
